@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<scenario name="/home/patricia/Desktop/ESR/files/ESR-T.xml">
+  <networks/>
+  <devices>
+    <device id="1" name="n1" type="PC">
+      <position x="136" y="192" lat="47.5765908929" lon="-122.129651867" alt="2.0"/>
+      <services>
+        <service name="DefaultRoute"/>
+      </services>
+    </device>
+    <device id="2" name="n2" type="PC">
+      <position x="138" y="336" lat="47.5746472496" lon="-122.129644186" alt="2.0"/>
+      <services>
+        <service name="DefaultRoute"/>
+      </services>
+    </device>
+    <device id="3" name="n3" type="router">
+      <position x="409" y="192" lat="47.5765494486" lon="-122.1242073" alt="2.0"/>
+      <services>
+        <service name="zebra"/>
+        <service name="OSPFv2"/>
+        <service name="OSPFv3"/>
+        <service name="IPForward"/>
+      </services>
+    </device>
+    <device id="4" name="n4" type="router">
+      <position x="408" y="335" lat="47.5746197584" lon="-122.124259423" alt="2.0"/>
+      <services>
+        <service name="zebra"/>
+        <service name="OSPFv2"/>
+        <service name="OSPFv3"/>
+        <service name="IPForward"/>
+      </services>
+    </device>
+    <device id="5" name="n5" type="router">
+      <position x="564" y="264" lat="47.5755541349" lon="-122.121132328" alt="2.0"/>
+      <services>
+        <service name="zebra"/>
+        <service name="OSPFv2"/>
+        <service name="OSPFv3"/>
+        <service name="IPForward"/>
+      </services>
+    </device>
+    <device id="6" name="n6" type="host">
+      <position x="794" y="264" lat="47.5755188955" lon="-122.116545431" alt="2.0"/>
+      <services>
+        <service name="DefaultRoute"/>
+        <service name="SSH"/>
+      </services>
+    </device>
+  </devices>
+  <links>
+    <link node_one="4" node_two="2">
+      <interface_one id="2" name="eth2" mac="00:00:00:aa:00:16" ip4="10.0.5.1" ip4_mask="24" ip6="2001:5::1" ip6_mask="64"/>
+      <interface_two id="0" name="eth0" mac="00:00:00:aa:00:17" ip4="10.0.5.20" ip4_mask="24" ip6="2001:5::20" ip6_mask="64"/>
+      <options type="1" unidirectional="0"/>
+    </link>
+    <link node_one="5" node_two="3">
+      <interface_one id="2" name="eth2" mac="00:00:00:aa:00:14" ip4="10.0.4.1" ip4_mask="24" ip6="2001:4::1" ip6_mask="64"/>
+      <interface_two id="2" name="eth2" mac="00:00:00:aa:00:15" ip4="10.0.4.2" ip4_mask="24" ip6="2001:4::2" ip6_mask="64"/>
+      <options type="1" unidirectional="0"/>
+    </link>
+    <link node_one="1" node_two="3">
+      <interface_one id="0" name="eth0" mac="00:00:00:aa:00:0c" ip4="10.0.0.20" ip4_mask="24" ip6="2001::20" ip6_mask="64"/>
+      <interface_two id="0" name="eth0" mac="00:00:00:aa:00:0d" ip4="10.0.0.1" ip4_mask="24" ip6="2001::1" ip6_mask="64"/>
+      <options type="1" unidirectional="0"/>
+    </link>
+    <link node_one="5" node_two="6">
+      <interface_one id="1" name="eth1" mac="00:00:00:aa:00:12" ip4="10.0.3.1" ip4_mask="24" ip6="2001:3::1" ip6_mask="64"/>
+      <interface_two id="0" name="eth0" mac="00:00:00:aa:00:13" ip4="10.0.3.10" ip4_mask="24" ip6="2001:3::10" ip6_mask="64"/>
+      <options type="1" unidirectional="0"/>
+    </link>
+    <link node_one="3" node_two="4">
+      <interface_one id="1" name="eth1" mac="00:00:00:aa:00:0e" ip4="10.0.1.1" ip4_mask="24" ip6="2001:1::1" ip6_mask="64"/>
+      <interface_two id="0" name="eth0" mac="00:00:00:aa:00:0f" ip4="10.0.1.2" ip4_mask="24" ip6="2001:1::2" ip6_mask="64"/>
+      <options type="1" unidirectional="0"/>
+    </link>
+    <link node_one="4" node_two="5">
+      <interface_one id="1" name="eth1" mac="00:00:00:aa:00:10" ip4="10.0.2.1" ip4_mask="24" ip6="2001:2::1" ip6_mask="64"/>
+      <interface_two id="0" name="eth0" mac="00:00:00:aa:00:11" ip4="10.0.2.2" ip4_mask="24" ip6="2001:2::2" ip6_mask="64"/>
+      <options type="1" unidirectional="0"/>
+    </link>
+  </links>
+  <session_origin lat="47.5791667" lon="-122.132322" alt="2.0" scale="150.0"/>
+  <session_metadata>
+    <configuration name="annotation a1" value="{iconcoords {86.0 184.0 880.0 464.0}} {type oval} {label {}} {labelcolor black} {fontfamily {Arial}} {fontsize {12}} {color #CFCFFF} {width 0} {border black} {canvas c1}"/>
+    <configuration name="canvas c1" value="{name {Canvas1}}"/>
+    <configuration name="global_options" value="interface_names=no ip_addresses=yes ipv6_addresses=no node_labels=yes link_labels=no show_api=no background_images=no annotations=yes grid=yes traffic_start=0"/>
+  </session_metadata>
+  <default_services>
+    <node type="PC">
+      <service name="DefaultRoute"/>
+    </node>
+    <node type="host">
+      <service name="DefaultRoute"/>
+      <service name="SSH"/>
+    </node>
+    <node type="router">
+      <service name="zebra"/>
+      <service name="OSPFv2"/>
+      <service name="OSPFv3"/>
+      <service name="IPForward"/>
+    </node>
+  </default_services>
+</scenario>

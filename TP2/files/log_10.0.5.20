@@ -1,0 +1,5 @@
+ip: 10.0.5.20
+sender: 10.0.1.2
+senderSender: 10.0.2.2
+
+Neighbours:
